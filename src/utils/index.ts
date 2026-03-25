@@ -1,4 +1,6 @@
-export const workoutProgram = {
+import type { WorkOutPlan } from "../types/indexType"
+
+export const workoutProgram : WorkOutPlan = {
     0: {  // Push
         warmup: [
             { name: "Around the worlds", sets: 2, reps: 25 },
@@ -438,7 +440,7 @@ export const exerciseDescriptions = {
     "Good girls / bad girls": "Using the adductor/abductor machine, move your legs together (adductor) or apart (abductor) to target the inner and outer thighs.",
 }
 
-export const gymHealthFacts = [
+export const gymHealthFacts : string[] = [
     "Getting 7–9 hours of sleep supports muscle recovery and hormone balance.",
     "Eating enough protein (1.6–2.2g per kg body weight) helps with muscle repair and growth.",
     "Staying hydrated improves workout performance and aids nutrient delivery.",
