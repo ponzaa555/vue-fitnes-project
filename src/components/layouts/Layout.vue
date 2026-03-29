@@ -10,6 +10,7 @@
         <a href="https://github.com/ponzaa555" target="_blank">
             <img src="https://avatars.githubusercontent.com/u/100279911?v=4" alt="pfp">
             <p>Napon</p>
+            <i class="fa-brands fa-github"></i>
         </a>
     </footer>
 </template>
@@ -42,5 +43,20 @@
     gap: 0.5rem;
     padding: 0.3rem;
     padding-right: 0.5rem;
+    background: var(--background-muted);
+    border-radius: 4rem;
+    border: 1px solid transparent;
+    transition-duration: 200ms;
+     text-decoration: none ;
+ }
+
+footer a:hover{
+    border-color: var(--color-link);
+}
+
+ footer a img {
+     max-width: 30px;
+     aspect-ratio: 1/1 ;
+     border-radius: 100%;
  }
 </style>

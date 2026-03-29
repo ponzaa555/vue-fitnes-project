@@ -394,7 +394,7 @@ export const workoutProgram : WorkOutPlan = {
 }
 
 
-export const exerciseDescriptions = {
+export const exerciseDescriptions : ExerciseDes = {
     "Around the worlds": "Hold a stick with a double shoulder-width grip. Start with the stick at your hips, then lift it over your head, keeping your arms straight, and lower it behind your back as far down as comfortable. Then slowly reverse the motion to return to the starting position.",
     "Scapula pushups": "Begin in a high plank position. Keep your arms straight and only move your shoulder blades, bringing them together and apart in a controlled manner, as you lower your body towards the ground, and then raise it back up. Hold a kneeling position if the plank is too challenging.",
     "Wall bodyweight rows": "Stand a foot away from a wall, lean back, and with your elbows by your sides and hands pointing forward of your body, press your body off the wall using your elbows while engaging your back muscles.",

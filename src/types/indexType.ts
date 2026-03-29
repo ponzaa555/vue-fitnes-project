@@ -14,3 +14,6 @@ export interface Exercise {
     reps : number
 }
 
+export interface ExerciseDes{
+    [Key: string]:string
+}
