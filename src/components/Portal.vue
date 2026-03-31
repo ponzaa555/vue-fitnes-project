@@ -1,11 +1,13 @@
 <script setup>
-
+const props = defineProps({
+    handleCloseModal : Function
+});
 </script>
 
 <template>
     <Teleport to="#portal">
         <div class="portal-container">
-            <div role="button" tabindex="0" @click="() => {}" class="portal-underlay">
+            <div role="button" tabindex="0" @click="props.handleCloseModal" class="portal-underlay">
             </div>
             <div class="portal-content">
                 <slot/>
@@ -40,7 +42,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        width: 600px;
+        width: 700px;
         max-width: 90vw ;
         max-height: 80vh ;
         display: grid;
