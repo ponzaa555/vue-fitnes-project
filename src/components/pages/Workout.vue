@@ -3,7 +3,19 @@
     import Portal from '../Portal.vue';
     import { exerciseDescriptions } from '../../utils';
     import { computed, ref } from 'vue';
-    const selectedWorkout = 4
+
+    const workoutType = ['Push','Pull','Leg']
+
+
+    const {selectedWorkout,data} = defineProps({
+        selectedWorkout:Number,
+        data:Object,
+        handleSaveWorkout : Function,
+        isWorkoutComplete : Boolean
+    })
+
+    console.log(selectedWorkout)
+    console.log(data)
     const {workout,warmup} = workoutProgram[selectedWorkout]
     let selectedExercise = ref(null) 
     const exerciseDes = computed(() => exerciseDescriptions[selectedExercise.value]) 
@@ -30,7 +42,7 @@
                 <p>Day {{ selectedWorkout < 9 ? '0'+(selectedWorkout +1) : selectedWorkout+1 }}</p>
                 <i class="fa-solid fa-dumbbell"></i>
             </div>
-            <h2>{{ 'Push' }} Workout </h2>
+            <h2>{{workoutType[selectedWorkout %3] }} Workout </h2>
         </div>
         <div class="workout-grid">
             <h4 class="grid-name">Warmup</h4>
@@ -48,7 +60,7 @@
                 </div>
                 <p>{{ w.sets }}</p>
                 <p>{{ w.reps }}</p>
-                <input class="grid-weights" placeholder="14kg" type="text" disabled>
+                <input  class="grid-weights" placeholder="14kg" type="text" disabled>
             </div>
             <div class="workout-grid-line"></div>
             <h4 class="grid-name">Workout</h4>
@@ -66,12 +78,12 @@
                     </div>
                     <p>{{ w.sets }}</p>
                     <p>{{ w.reps }}</p>
-                    <input class="grid-weights" placeholder="14kg" type="text" >
+                    <input v-model="data[selectedWorkout][w.name]" class="grid-weights" placeholder="14kg" type="text" >
             </div>
         </div>
         <div class="card workout-btns">
-            <button>Save & Exit <i class="fa-solid fa-save"></i></button>
-            <button>Complete <i class="fa-solid fa-check"></i></button>
+            <button @click="handleSaveWorkout">Save & Exit <i class="fa-solid fa-save"></i></button>
+            <button :disabled="!isWorkoutComplete" @click="handleSaveWorkout">Complete <i class="fa-solid fa-check"></i></button>
         </div>
     </section>
 </template>
@@ -107,6 +119,12 @@
          grid-column: span 7 / span 7;
     }
 
+    .workout-grid-line{
+        margin: 0.5rem 0;
+        height: 3px;
+        border-radius: 2px;
+        background-color: var(--background-muted);
+    }
 
     .grid-name{
         grid-column: span 3 / span 3;
