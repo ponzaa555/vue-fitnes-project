@@ -1,4 +1,4 @@
-import type { WorkOutPlan } from "../types/indexType"
+import type { ExerciseDes, WorkOutPlan } from "../types/indexType"
 
 export const workoutProgram : WorkOutPlan = {
     0: {  // Push
